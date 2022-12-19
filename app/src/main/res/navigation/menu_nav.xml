@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_nav"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.kotlinnavigation.Fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_home_to_addFragment"
+            app:destination="@id/add" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.kotlinnavigation.Fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_profile_to_addFragment"
+            app:destination="@id/add" />
+    </fragment>
+    <fragment
+        android:id="@+id/add"
+        android:name="com.example.kotlinnavigation.Fragment.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_addFragment_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+</navigation>
